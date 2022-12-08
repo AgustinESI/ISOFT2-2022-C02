@@ -4,12 +4,12 @@
   <parent>
     <artifactId>ISOFT2-C02</artifactId>
     <groupId>ISOFT2</groupId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.4-SNAPSHOT</version>
   </parent>
 
   <groupId>ISOFT2-C02-IT04</groupId>
   <artifactId>ISOFT2-C02-IT04</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.2-SNAPSHOT</version>
 
   <name>ISOFT2-C02-IT04</name>
   <!-- FIXME change it to the project's website -->
