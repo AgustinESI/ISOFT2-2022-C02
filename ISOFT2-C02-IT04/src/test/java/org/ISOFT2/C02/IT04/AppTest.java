@@ -16,6 +16,6 @@ public class AppTest
     @Test
     public void shouldAnswerWithTrue()
     {
-		assertEquals("Testing iteracion 3", "Testing iteracion 3");
+		assertEquals("Testing iteracion 4", "Testing iteracion 4");
     }
 }
