@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
@@ -7,7 +7,7 @@
 
 	<artifactId>ISOFT2-C02</artifactId>
 
-	<version>0.0.4-SNAPSHOT</version>
+	<version>0.0.5-SNAPSHOT</version>
 
 	<name>ISOFT2-2022-C02</name>
 
@@ -189,7 +189,7 @@
 		<module>ISOFT2-C02-IT03</module>
 
 		<module>ISOFT2-C02-IT04</module>
-
-	</modules>
+    <module>ISOFT2-C02-IT05</module>
+  </modules>
 
 </project>
