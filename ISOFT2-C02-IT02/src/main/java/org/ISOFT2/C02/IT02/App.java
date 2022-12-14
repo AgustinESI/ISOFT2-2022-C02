@@ -6,8 +6,8 @@ package org.ISOFT2.C02.IT02;
  */
 public class App 
 {
-    public static void main( String[] args )
+	public static void main( String[] args )
     {
-        System.out.println( "Implementacion de la iteracion2." );
+        System.out.println( "iteración 2." );
     }
 }

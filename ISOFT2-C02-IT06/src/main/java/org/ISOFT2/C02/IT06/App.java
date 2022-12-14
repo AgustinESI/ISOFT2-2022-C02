@@ -1,4 +1,4 @@
-package org.ISOFT2.C02.IT05;
+package org.ISOFT2.C02.IT06;
 
 /**
  * Hello world!
@@ -8,6 +8,6 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "iteración 5." );
+        System.out.println( "Hello World!" );
     }
 }
