@@ -1,47 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>ISOFT2-C02</artifactId>
+		<groupId>ISOFT2</groupId>
+		<version>0.0.5-SNAPSHOT</version>
+	</parent>
+
 	<groupId>ISOFT2</groupId>
-	<artifactId>ISOFT2-C02</artifactId>
+	<artifactId>ISOFT2-C02-IT05</artifactId>
 	<version>0.0.6-SNAPSHOT</version>
-	<name>ISOFT2-2022-C02</name>
+
+	<name>ISOFT2-C02-IT05</name>
 	<!-- FIXME change it to the project's website -->
 	<url>http://www.example.com</url>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.resources.sourceEncoding>UTF-8</project.resources.sourceEncoding>
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
 	</properties>
-	<packaging>pom</packaging>
 
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
+			<version>4.13.2</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-plugin</artifactId>
+			<version>3.0.0-M7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-surefire-report-plugin</artifactId>
+			<version>3.0.0-M7</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>3.3.2</version>
+			<type>maven-plugin</type>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.doxia</groupId>
+			<artifactId>doxia-site-renderer</artifactId>
+			<version>1.9.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-chain</groupId>
+			<artifactId>commons-chain</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/commons-digester/commons-digester -->
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<version>2.1</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
-		<finalName>JunitExample</finalName>
+		<finalName>ISOFT2-C02-IT05</finalName>
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
-				<version>3.7.1</version>
+				<version>3.10.0</version>
 			</plugin>
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>3.0.0</version>
+				<version>3.4.1</version>
 			</plugin>
 
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.9</version>
+				<version>0.8.7</version>
+				<configuration>
+					<excludes>
+						<exclude>META-INF/**</exclude>
+					</excludes>
+				</configuration>
 				<executions>
 					<execution>
 						<id>default-prepare-agent</id>
@@ -91,75 +150,35 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.4.1</version>
+			</plugin>
 		</plugins>
 	</build>
-
-	<modules>
-		<module>ISOFT2-C02-IT01</module>
-		<module>ISOFT2-C02-IT03</module>
-		<module>ISOFT2-C02-IT04</module>
-		<module>ISOFT2-C02-IT02</module>
-		<module>ISOFT2-C02-IT05</module>
-		<module>ISOFT2-C02-IT06</module>
-	</modules>
 
 	<reporting>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.8</version>
-				<configuration>
-					<rulesets>
-						<ruleset>/rulesets/java/basic.xml</ruleset>
-						<ruleset>/rulesets/java/imports.xml</ruleset>
-						<ruleset>/rulesets/java/unnecessary.xml</ruleset>
-						<ruleset>/rulesets/java/braces.xml</ruleset>
-						<ruleset>/rulesets/java/naming.xml</ruleset>
-						<ruleset>/rulesets/java/design.xml</ruleset>
-						<ruleset>/rulesets/java/coupling.xml</ruleset>
-						<ruleset>/rulesets/java/controversial.xml</ruleset>
-						<ruleset>/rulesets/java/optimizations.xml</ruleset>
-					</rulesets>
-					<reportSets>
-						<reportSet>
-							<reports>
-								<report>pmd</report>
-								<report>cpd</report>
-							</reports>
-						</reportSet>
-					</reportSets>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-				<configuration>
-					<skipEmptyReport>false</skipEmptyReport>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-checkstyle-plugin</artifactId>
-				<configuration>
-					<skipEmptyReport>false</skipEmptyReport>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-			</plugin>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>3.4.1</version>
 
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>3.3.0</version>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
 				<version>3.0.0-M7</version>
 				<configuration>
 					<skipEmptyReport>false</skipEmptyReport>
-					<useFile>false</useFile>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -172,17 +191,6 @@
 				</reportSets>
 			</plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>3.4.1</version>
-
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jxr-plugin</artifactId>
-				<version>3.3.0</version>
-			</plugin>
 
 		</plugins>
 	</reporting>
