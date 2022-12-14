@@ -4,7 +4,7 @@
   <parent>
     <artifactId>ISOFT2-C02</artifactId>
     <groupId>ISOFT2</groupId>
-    <version>0.0.4-SNAPSHOT</version>
+    <version>0.0.5-SNAPSHOT</version>
   </parent>
 
   <groupId>ISOFT2-C02-IT04</groupId>
